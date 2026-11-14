@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>A Little Something For You ❤️ | A Cinematic Apology</title>
+  <meta name="description" content="A cinematic, heartfelt and romantic personal apology experience. Dedicated with utmost respect, warmth and love.">
+  <meta name="theme-color" content="#070306">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+
+  <!-- Google Fonts: Luxury Romantic & Cinematic Typography (including Marathi Devanagari) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&family=Rozha+One&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Official YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Canvas for Floating Embers & Stardust -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Film Grain Overlay for Authentic Cinema Feel -->
+  <div class="film-grain"></div>
+  <div class="vignette-overlay"></div>
+
+  <!-- Top Glass Navigation Bar -->
+  <header class="top-nav" id="topNav">
+    <div class="nav-brand">
+      <span class="brand-sparkle">✦</span>
+      <span class="brand-text">A Little Something For You</span>
+    </div>
+
+    <!-- Chapter Quick Links -->
+    <nav class="nav-chapters" aria-label="Chapters">
+      <button class="nav-link active" data-target="opening">Intro</button>
+      <button class="nav-link" data-target="eyes-section">Her Eyes</button>
+      <button class="nav-link" data-target="scene-section">The Scene</button>
+      <button class="nav-link" data-target="message-section">Words</button>
+      <button class="nav-link" data-target="surprise-section">Surprise</button>
+    </nav>
+
+    <!-- Audio Player Controls -->
+    <div class="nav-controls">
+      <div class="volume-slider-wrap" id="volumeWrap" title="Adjust Soundtrack Volume">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" class="vol-icon">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.75" class="nav-volume-slider" aria-label="Volume Slider">
+      </div>
+      <button id="audio-toggle" class="audio-btn" title="Toggle Emotional Soundtrack" aria-label="Toggle Soundtrack">
+        <div class="audio-bars" id="audioBars">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+        </div>
+        <span class="audio-status-text" id="audioStatusText">Music: Off</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==============================================
+         SECTION 1: THE OPENING SCREEN
+         ============================================== -->
+    <section id="opening" class="hero-screen">
+      <div class="hero-ambient-glow"></div>
+
+      <div class="hero-content">
+        <div class="hero-tag animate-fade">
+          <span class="ornament">❖</span>
+          <span>A CINEMATIC DEDICATION</span>
+          <span class="ornament">❖</span>
+        </div>
+
+        <h1 class="hero-title animate-glow">
+          Hey, You… <span class="heart-pulse">❤️</span>
+        </h1>
+
+        <p class="hero-subtitle animate-fade-delay-1">
+          I made something special for you.
+        </p>
+
+        <p class="hero-quote animate-fade-delay-2">
+          “Take a deep breath, leave the rush behind, and let this moment belong just to you.”
+        </p>
+
+        <div class="hero-action animate-fade-delay-3">
+          <button id="open-surprise-btn" class="btn-primary" aria-label="Open Your Surprise">
+            <span class="btn-glow-ring"></span>
+            <span class="btn-text">Open Your Surprise</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <div class="audio-hint" id="heroAudioHint">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+            <span id="heroAudioHintText">Tap button or screen to begin with music ♫</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-cue" id="scrollCue">
+        <span class="scroll-label">Scroll to experience</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 2: HER EYES – THE MAIN ATTRACTION
+         ============================================== -->
+    <section id="eyes-section" class="cinematic-section section-eyes">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="chapter-number">CHAPTER I</span>
+          <h2 class="section-heading">Her Eyes – The Main Attraction</h2>
+          <div class="heading-divider">
+            <span class="line"></span>
+            <span class="diamond">✦</span>
+            <span class="line"></span>
+          </div>
+          <p class="section-lead">
+            In a noisy world, some eyes carry an entire universe of poetry, depth and unspoken warmth.
+          </p>
+        </div>
+
+        <!-- The Giant TV Display Frame for Her Eyes -->
+        <div class="eyes-stage-wrapper">
+          <div class="screen-backlight" id="eyesBacklight"></div>
+
+          <div class="premium-display-frame" id="eyesFrame">
+            <!-- Frame Top Bar / Bezel -->
+            <div class="display-bezel-top">
+              <span class="tv-indicator-dot active"></span>
+              <span class="tv-model-text">CINEMATIC OLED MASTER • ULTRA CLARITY</span>
+              <span class="tv-resolution">4K HDR • 60 FPS</span>
+            </div>
+
+            <!-- The Image Screen Viewport -->
+            <div class="screen-viewport">
+              <div class="screen-glass-sheen"></div>
+              
+              <!-- Original Her Eyes Photograph -->
+              <img 
+                src="dh3.jpeg" 
+                alt="Her beautiful eyes - Original photograph close up" 
+                class="eyes-image" 
+                id="eyesImage"
+                loading="eager"
+              >
+
+              <!-- Subtle Cinematic Vignette Inside Screen -->
+              <div class="inner-screen-shadow"></div>
+
+              <!-- Interactive Spotlight Effect -->
+              <div class="screen-spotlight" id="screenSpotlight"></div>
+            </div>
+
+            <!-- Frame Bottom Bar -->
+            <div class="display-bezel-bottom">
+              <div class="bezel-brand">
+                <span class="brand-logo">ETHEREAL</span>
+                <span class="bezel-led"></span>
+              </div>
+              <div class="bezel-actions">
+                <button class="bezel-btn" id="zoomToggleBtn" title="Toggle Cinematic Zoom Effect">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  <span>Smooth Zoom</span>
+                </button>
+                <button class="bezel-btn" id="glowToggleBtn" title="Toggle Soft Ambient Light">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                  <span>Ambient Glow</span>
+                </button>
+                <button class="bezel-btn" id="viewFullEyesBtn" title="Inspect Original Image">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                  <span>Full View</span>
+                </button>
+                <button class="bezel-btn" id="viewPortraitEyesBtn" title="View Close-up Crop">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                  <span>Portrait View</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poetic Reflection Card -->
+        <div class="eyes-quote-card">
+          <div class="quote-ornament-left">“</div>
+          <p class="quote-body">
+            There is a quiet honesty in your eyes that requires no explanation. 
+            Clear, gentle, and unforgettable — they reflect the pure soul that lives behind them.
+          </p>
+          <div class="quote-ornament-right">”</div>
+          <span class="quote-signature">— Cherished, Always</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 3: BEAUTIFUL CINEMATIC SCENE
+         ============================================== -->
+    <section id="scene-section" class="cinematic-section section-scene">
+      <div class="section-container">
+
+        <div class="section-header">
+          <span class="chapter-number">CHAPTER II</span>
+          <h2 class="section-heading">A Moment of Reflection</h2>
+          <div class="heading-divider">
+            <span class="line"></span>
+            <span class="diamond">✦</span>
+            <span class="line"></span>
+          </div>
+          <p class="section-lead">
+            In a quiet room, bathed in midnight shadows, with nothing but your memory on the screen.
+          </p>
+        </div>
+
+        <!-- Cinematic Theater Viewport -->
+        <div class="theater-stage" id="theaterStage">
+          
+          <!-- Cinema Ambience Backlight -->
+          <div class="theater-ambient-glow" id="theaterGlow"></div>
+
+          <div class="cinema-letterbox-frame" id="cinemaFrame">
+            <!-- Top Letterbox Bar -->
+            <div class="letterbox-bar bar-top">
+              <span class="film-stamp">SCENE 07 • TAKE 01</span>
+              <span class="film-timecode" id="filmTimecode">00:03:42:18</span>
+              <span class="film-aspect">PANAVISION 2.39:1</span>
+            </div>
+
+            <!-- The Movie Frame (dh2.jpeg: Boy sitting on sofa looking at TV with her eyes and "Sorry...") -->
+            <div class="movie-still-container">
+              <img 
+                src="dh2.jpeg" 
+                alt="A cinematic scene of a boy in a dark room sitting on a sofa looking at a giant television displaying her eyes with a glowing Sorry" 
+                class="movie-still-image"
+                id="movieStill"
+                loading="lazy"
+              >
+
+              <!-- Dynamic Screen Flare from the TV inside the image -->
+              <div class="tv-glow-emitter"></div>
+
+              <!-- Drifting Embers inside scene -->
+              <div class="scene-embers-overlay"></div>
+
+              <!-- Subtitle Overlay -->
+              <div class="cinema-subtitle">
+                <p class="subtitle-text">
+                  “I sat there in the quiet stillness, watching the only light that mattered… wishing I had never brought you a moment of sorrow.”
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Letterbox Bar -->
+            <div class="letterbox-bar bar-bottom">
+              <div class="cinema-controls">
+                <button class="cinema-control-btn" id="cinemaModeBtn">
+                  <span class="btn-dot"></span>
+                  <span id="cinemaBtnText">Dim Room Lights</span>
+                </button>
+                <button class="cinema-control-btn" id="openSceneModalBtn">
+                  <span>Enlarge Still</span>
+                </button>
+              </div>
+              <span class="audio-channel">DOLBY ATMOS 7.1 • AMBIENT NIGHT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene Commentary -->
+        <div class="scene-caption-box">
+          <div class="caption-card">
+            <div class="caption-icon">🕯️</div>
+            <div class="caption-text">
+              <h4>Every Shadow Has A Meaning</h4>
+              <p>
+                In that stillness, the TV lights softly illuminate the room, just as your presence has brought warmth into my life. 
+                Even from behind, the silence carries a genuine apology that words struggle to hold.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 4: HEARTFELT MESSAGE & SMILE TRIBUTE
+         ============================================== -->
+    <section id="message-section" class="cinematic-section section-message">
+      <div class="section-container">
+
+        <div class="section-header">
+          <span class="chapter-number">CHAPTER III</span>
+          <h2 class="section-heading">From The Depth of My Heart</h2>
+          <div class="heading-divider">
+            <span class="line"></span>
+            <span class="diamond">✦</span>
+            <span class="line"></span>
+          </div>
+          <p class="section-lead">
+            Every syllable written here comes from genuine sincerity, respect and deep care.
+          </p>
+        </div>
+
+        <!-- The Glowing Glass Plaque with Typing Animation -->
+        <div class="message-plaque-wrapper">
+          <div class="plaque-backlight"></div>
+
+          <div class="message-plaque" id="messagePlaque">
+            <div class="plaque-header">
+              <div class="plaque-stamp">
+                <span class="seal-icon">❤️</span>
+                <span class="seal-label">A SINCERE PROMISE</span>
+              </div>
+              <button class="replay-type-btn" id="replayTypingBtn" title="Replay Message Animation">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 4v6h6M23 20v-6h-6"/>
+                  <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                </svg>
+                <span>Replay Words</span>
+              </button>
+            </div>
+
+            <!-- The 4 Exact Required Lines -->
+            <div class="message-lines-container" id="typewriterContainer">
+              
+              <!-- Line 1 -->
+              <div class="typed-line-wrap" id="lineWrap1">
+                <span class="line-number">01</span>
+                <p class="typed-text" id="typeLine1" data-text="“Some people are too special for ordinary words.”"></p>
+              </div>
+
+              <!-- Line 2 -->
+              <div class="typed-line-wrap" id="lineWrap2">
+                <span class="line-number">02</span>
+                <p class="typed-text" id="typeLine2" data-text="“Your smile matters. Your happiness matters.”"></p>
+              </div>
+
+              <!-- Line 3 -->
+              <div class="typed-line-wrap highlight-line" id="lineWrap3">
+                <span class="line-number">03</span>
+                <p class="typed-text" id="typeLine3" data-text="“And if I ever made you feel bad, I'm genuinely sorry.”"></p>
+              </div>
+
+              <!-- Line 4 -->
+              <div class="typed-line-wrap final-line" id="lineWrap4">
+                <span class="line-number">04</span>
+                <p class="typed-text" id="typeLine4" data-text="“Never stop smiling. You deserve all the happiness in the world. ❤️”"></p>
+              </div>
+
+            </div>
+
+            <div class="plaque-footer">
+              <div class="footer-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <span class="footer-note">Typed with genuine remorse & heartfelt care</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Wax-Sealed Letter -->
+        <div class="wax-letter-container">
+          <div class="wax-letter-card" id="waxLetterCard">
+            <div class="wax-seal-wrapper" id="waxSealBtn" title="Click to open letter">
+              <div class="wax-seal">
+                <span class="wax-initial">✦</span>
+              </div>
+              <span class="seal-prompt">Tap the wax seal to open a personal note</span>
+            </div>
+            
+            <div class="wax-letter-content" id="waxLetterContent">
+              <div class="letter-top-flourish">❧ ❧ ❧</div>
+              <p class="letter-greeting">Dearest,</p>
+              <p class="letter-p">
+                I know words cannot undo moments where I might have hurt your feelings or made you feel low, but I wanted to create something enduring and beautiful just to show you how genuinely sorry I am.
+              </p>
+              <p class="letter-p">
+                You carry an extraordinary innocence and sweetness in your smile. Seeing you hurt is the last thing I ever want in this world.
+              </p>
+              <p class="letter-p">
+                Whenever you look at this little corner of the internet, remember: your peace, your laughter, and your happiness are always worth protecting. Thank you for simply being you.
+              </p>
+              <div class="letter-signoff">
+                <p>With quiet regret & sincere care,</p>
+                <span class="handwritten-sign">Always Wishing You Smiles ❤️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+             HER RADIANT SMILE GALLERY (dh4, dh5, dh6, dh7, dh8)
+             A celebration of why her smile matters so much!
+             ============================================== -->
+        <div class="smile-tribute-container">
+          <div class="tribute-header">
+            <span class="tribute-badge">A TRIBUTE TO YOUR SMILE</span>
+            <h3 class="tribute-title">The Reason Everything Brightens Up</h3>
+            <p class="tribute-desc">
+              Your smile has an effortless grace that brings calm and brightness. These are real moments of your radiant light:
+            </p>
+          </div>
+
+          <div class="smile-grid">
+            <!-- Card 1 (dh4.jpeg) -->
+            <div class="smile-card" data-img="dh4.jpeg" data-caption="A smile that lights up the world effortlessly.">
+              <div class="smile-image-frame">
+                <img src="dh4.jpeg" alt="Her radiant genuine smile" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Pure Light</span>
+                <p class="smile-caption">“A smile that lights up the world effortlessly.”</p>
+              </div>
+            </div>
+
+            <!-- Card 2 (dh5.jpeg) -->
+            <div class="smile-card" data-img="dh5.jpeg" data-caption="Graceful, gentle, and utterly unforgettable.">
+              <div class="smile-image-frame">
+                <img src="dh5.jpeg" alt="Her sweet and thoughtful smile" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Gentle Grace</span>
+                <p class="smile-caption">“Graceful, gentle, and utterly unforgettable.”</p>
+              </div>
+            </div>
+
+            <!-- Card 3 (dh7.jpeg) -->
+            <div class="smile-card" data-img="dh7.jpeg" data-caption="Traditional beauty radiating calm peace.">
+              <div class="smile-image-frame">
+                <img src="dh7.jpeg" alt="Her calm and serene expression" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Serene Elegance</span>
+                <p class="smile-caption">“Traditional beauty radiating calm peace.”</p>
+              </div>
+            </div>
+
+            <!-- Card 4 (dh8.jpeg) -->
+            <div class="smile-card" data-img="dh8.jpeg" data-caption="A smile that carries natural warmth and grace.">
+              <div class="smile-image-frame">
+                <img src="dh8.jpeg" alt="Her sweet natural smile" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Sweet Warmth</span>
+                <p class="smile-caption">“A smile that carries natural warmth and grace.”</p>
+              </div>
+            </div>
+
+            <!-- Card 5 (dh6.jpeg) -->
+            <div class="smile-card" data-img="dh6.jpeg" data-caption="Cheerful innocence that spreads pure joy.">
+              <div class="smile-image-frame">
+                <img src="dh6.jpeg" alt="Her cheerful joyful smile" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Joyful Spirit</span>
+                <p class="smile-caption">“Cheerful innocence that spreads pure joy.”</p>
+              </div>
+            </div>
+
+            <!-- Card 6 (dh9.jpeg) -->
+            <div class="smile-card" data-img="dh9.jpeg" data-caption="Poised, confident and full of quiet happiness.">
+              <div class="smile-image-frame">
+                <img src="dh9.jpeg" alt="Her poised and gentle smile" loading="lazy">
+                <div class="smile-hover-glow"></div>
+                <div class="smile-expand-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="smile-info">
+                <span class="smile-moment-tag">Poised & Bright</span>
+                <p class="smile-caption">“Poised, confident and full of quiet happiness.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         SECTION 5: INTERACTIVE SURPRISE
+         ============================================== -->
+    <section id="surprise-section" class="cinematic-section section-surprise">
+      <div class="section-container">
+
+        <div class="section-header">
+          <span class="chapter-number">CHAPTER IV</span>
+          <h2 class="section-heading">One Final Surprise</h2>
+          <div class="heading-divider">
+            <span class="line"></span>
+            <span class="diamond">✦</span>
+            <span class="line"></span>
+          </div>
+          <p class="section-lead">
+            Press the button below when you are ready for a magical moment crafted just for you.
+          </p>
+        </div>
+
+        <!-- The Glowing Trigger Box -->
+        <div class="surprise-trigger-box">
+          <div class="surprise-halo"></div>
+          
+          <div class="surprise-card">
+            <div class="surprise-icon-pulse">
+              <span class="gift-icon">✨</span>
+            </div>
+
+            <h3 class="surprise-prompt-title">A Little Something Just For You</h3>
+            <p class="surprise-prompt-desc">
+              Touch below to ignite a field of living starlight that remembers every reason you deserve happiness.
+            </p>
+
+            <button id="surprise-btn" class="btn-surprise" aria-label="Open One More Surprise">
+              <span class="btn-surprise-glow"></span>
+              <span class="btn-surprise-content">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>One More Surprise</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==============================================
+       FULL-SCREEN INTERACTIVE PARTICLE HEART MODAL
+       ============================================== -->
+  <div class="particle-heart-modal" id="heartModal" aria-hidden="true">
+    <!-- Close button -->
+    <button class="modal-close-btn" id="closeHeartModalBtn" title="Close Surprise View">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Canvas for 2000+ interactive beating starlight particles -->
+    <canvas id="heart-canvas"></canvas>
+
+    <!-- Center Content Floating inside Particle Universe -->
+    <div class="heart-modal-overlay">
+      
+      <!-- Her Smiling Portrait inside Glowing Halo -->
+      <div class="modal-portrait-wrapper animate-portrait-in">
+        <div class="portrait-aurora"></div>
+        <div class="portrait-frame">
+          <img src="dh4.jpeg" alt="Her glowing smile in the heart of starlight" class="modal-smile-img">
+        </div>
+      </div>
+
+      <!-- The Grand Reveal Message -->
+      <div class="heart-reveal-message animate-message-in">
+        <div class="reveal-stars">✦ ✦ ✦</div>
+        <h2 class="reveal-text">
+          “A little smile looks beautiful on you.”
+        </h2>
+        <p class="reveal-subtext">
+          Never let anything dim that light. You are rare, precious, and worthy of all good things.
+        </p>
+      </div>
+
+      <!-- Interactive Buttons -->
+      <div class="heart-modal-actions">
+        <button class="action-btn glow-btn" id="sendSmileBtn">
+          <span class="btn-emoji">😊</span>
+          <span>Send A Smile Back</span>
+        </button>
+        <button class="action-btn outline-btn" id="rainPetalsBtn">
+          <span class="btn-emoji">🌹</span>
+          <span>Rain Rose Petals</span>
+        </button>
+        <button class="action-btn outline-btn" id="replayHeartBtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 4v6h6M23 20v-6h-6"/>
+            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+          </svg>
+          <span>Pulse Particle Heart</span>
+        </button>
+      </div>
+
+      <!-- Interactive Tip -->
+      <p class="particle-touch-tip">
+        Touch or move your cursor to gently ripple the living starlight
+      </p>
+
+    </div>
+  </div>
+
+
+  <!-- ==============================================
+       PHOTO LIGHTBOX / FULL VIEW MODAL
+       ============================================== -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close-btn" id="closeLightboxBtn" title="Close preview">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="lightbox-image-box">
+        <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" title="Previous image">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <img id="lightboxImg" src="" alt="Enlarged photo preview">
+        <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" title="Next image">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+
+  <!-- Floating Toast Notification for Interactions -->
+  <div class="toast-notification" id="toastNotification">
+    <span class="toast-icon">❤️</span>
+    <span class="toast-msg" id="toastMsg">Your smile reached the stars. Thank you!</span>
+  </div>
+
+  <!-- Floating Romantic Music Player Dock -->
+  <aside class="floating-music-dock" id="floatingMusicDock" aria-label="Music Player: Ishq De Fanniyar (Female Version)">
+    <!-- Spinning Vinyl Record -->
+    <div class="vinyl-record-wrap" id="vinylDiscWrap" title="Ishq De Fanniyar - Female Version (Jyotica Tangri)">
+      <div class="vinyl-groove">
+        <div class="vinyl-center-art">
+          <span class="vinyl-note-icon">♫</span>
+        </div>
+      </div>
+      <div class="floating-music-notes" id="floatingNotes">
+        <span class="music-note n1">♪</span>
+        <span class="music-note n2">♫</span>
+        <span class="music-note n3">♩</span>
+      </div>
+    </div>
+
+    <!-- Song Info & Player Controls -->
+    <div class="player-info-cluster">
+      <div class="song-meta">
+        <div class="song-badge">
+          <span class="pulse-dot"></span>
+          <span class="badge-text" id="dockBadgeText">MUSIC</span>
+        </div>
+        <div class="song-marquee-wrap">
+          <h4 class="song-title">Ishq De Fanniyar (Female)</h4>
+        </div>
+        <p class="song-artist">Jyotica Tangri • Fukrey Returns</p>
+      </div>
+
+      <!-- Play/Pause Button & Visualizer -->
+      <div class="player-action-strip">
+        <button id="floatingPlayBtn" class="floating-play-btn" title="Play or Pause Song" aria-label="Play or Pause Song">
+          <svg class="play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <svg class="pause-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+
+        <div class="floating-equalizer" id="floatingEqualizer">
+          <span class="eq-col col-1"></span>
+          <span class="eq-col col-2"></span>
+          <span class="eq-col col-3"></span>
+          <span class="eq-col col-4"></span>
+          <span class="eq-col col-5"></span>
+        </div>
+
+        <button id="dockCollapseBtn" class="dock-collapse-btn" title="Minimize / Expand Player" aria-label="Minimize Player">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- YouTube Official Audio Stream Host -->
+  <div id="youtube-audio-host" class="youtube-audio-host" aria-hidden="true">
+    <div id="youtube-player"></div>
+  </div>
+
+  <!-- Very End of the Website -->
+  <footer class="cinematic-footer">
+    <div class="bala-container">
+      <h2 class="bala-text">बाळा <span class="bala-heart">❤️</span></h2>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
